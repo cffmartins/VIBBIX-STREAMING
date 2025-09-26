@@ -1,0 +1,65 @@
+// colors
+$white: #ffffff;
+$black: #000000;
+
+$gray-50: #fcfcfd;
+$gray-100: #f7f7fa;
+$gray-200: #ececf2;
+$gray-300: #dedde8;
+$gray-400: #9c9bb3;
+$gray-500: #686882;
+$gray-600: #51516c;
+$gray-700: #404056;
+$gray-800: #2e2e3f; // sidebar and search bar background color
+$gray-900: #1f1f2c; // background color
+$gray-950: #11111a;
+
+$amber-300: #fcd34d;
+
+// typography sizes
+// Using clamp for responsive typography
+// clamp(min, preferred, max)
+$h1: clamp(2.75rem, 5vw, 3rem);
+$h2: clamp(1.875rem, 4vw, 2rem);
+$h3: clamp(1.5rem, 3vw, 1.875rem);
+$h4: clamp(1.25rem, 2.5vw, 1.5rem);
+$h5: clamp(1.125rem, 2vw, 1.25rem);
+$h6: clamp(1rem, 1.5vw, 1rem);
+// Paragraphs
+$p: clamp(1rem, 1.5vw, 1rem);
+$small: clamp(0.875rem, 1.2vw, 0.875rem);
+$x-small: 0.75rem;
+// font weights
+$font-bold: 700;
+$font-regular: 500;
+$font-light: 400;
+
+// spacing system
+$spacing-xs: 0.5rem;
+$spacing-sm: 1rem;
+$spacing-md: 1.5rem;
+$spacing-lg: 2rem;
+$spacing-xl: 4rem;
+
+// Border radius
+$border-radius-sm: 4px;
+$border-radius-md: 8px;
+$border-radius-lg: 12px;
+$border-radius-pill: 50px;
+$border-radius-circle: 50%;
+
+// Transitions
+$transition-fast: 0.2s ease;
+$transition-normal: 0.3s ease;
+$transition-slow: 0.5s ease;
+
+// Shadow
+$shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.3);
+$shadow-md: 0 4px 8px rgba(0, 0, 0, 0.5);
+$shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.7);
+
+// Z-index layers
+$z-index-dropdown: 100;
+$z-index-modal: 200;
+$z-index-toast: 300;
+$z-index-tooltip: 400;

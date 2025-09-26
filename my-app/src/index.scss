@@ -1,0 +1,21 @@
+// Global styles
+@use "./styles/reset";
+@use "./styles/variables";
+@use "./styles/mixins";
+@use "./styles/globals";
+
+// Component styles
+@use "./components/NavBar/_NavBar";
+@use "./components/Button/_Button";
+@use "./components/Watchlist/_Watchlist";
+@use "./components/LeftSideBar/_LeftSidebar";
+@use "./components/RightSidebar/_Rightsidebar";
+
+// Page styles
+@use "./pages/Homepage/Homepage";
+@use "./pages/MoviesPage/MoviesPage";
+@use "./pages/SeriesPage/SeriesPage";
+@use "./pages/TopRated/TopRated";
+@use "./pages/Upcoming/Upcoming";
+@use "./pages/DetailsPage/DetailsPage";
+@use "./components/Layout/_Layout";

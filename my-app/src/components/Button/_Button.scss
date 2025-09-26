@@ -1,0 +1,71 @@
+@use "../../styles/variables" as *;
+@use "../../styles/mixins" as *;
+@use "../../styles/_globals.scss" as *;
+
+.btn {
+  border-radius: 8px;
+  border: none;
+  transition: background 0.3s, color 0.3s;
+  position: relative;
+
+  &--navbar {
+    background: transparent;
+    color: $white;
+    padding: 0.5em 1em;
+    font-size: $h5;
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+
+    &:hover,
+    &.active {
+      color: $amber-300;
+      font-weight: $font-bold;
+
+      &::after {
+        content: "";
+        position: absolute;
+        left: 15%;
+        bottom: 3px;
+        width: 70%;
+        height: 3px;
+        background: $amber-300;
+        border-radius: inherit;
+      }
+    }
+  }
+
+  &--watchmore {
+    background: $amber-300;
+    color: $gray-900;
+    padding: 0.85em 2.5em;
+    font-weight: 700;
+    border-radius: 12px;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    &:hover {
+      background: darken($amber-300, 5%);
+    }
+  }
+
+  &--watchlist {
+    background: $gray-700;
+    color: $amber-300;
+    padding: 0.7em 2em;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    &:hover {
+      background: $gray-800;
+      color: $white;
+    }
+  }
+}

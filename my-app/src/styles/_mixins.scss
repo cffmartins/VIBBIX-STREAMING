@@ -1,0 +1,110 @@
+@use "./variables" as *;
+
+// mixins for reusable styles
+
+// flexbox mixin
+@mixin flex($justify: center, $align: center, $direction: row) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+// grid mixin
+@mixin grid() {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1rem;
+
+  @media (max-width: 1200px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  @media (max-width: 800px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+// section padding mixin
+@mixin section-padding() {
+  padding: 4rem;
+
+  @media (max-width: 1200px) {
+    padding: 2rem;
+  }
+
+  @media (max-width: 800px) {
+    padding: 2rem;
+  }
+}
+
+// custom scrollbar mixin
+@mixin custom-scrollbar($size: 8px) {
+  &::-webkit-scrollbar {
+    width: $size;
+    height: $size;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: $amber-300;
+    border-radius: 4px;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: lighten($amber-300, 10%);
+  }
+
+  /* Firefox */
+  scrollbar-width: thin;
+  scrollbar-color: $amber-300 transparent;
+}
+
+// Card hover effect mixin
+@mixin card-hover-effect($scale: 1.05, $transition-speed: 0.3s) {
+  transition: transform $transition-speed ease,
+    box-shadow $transition-speed ease;
+
+  &:hover {
+    transform: scale($scale);
+    z-index: 2;
+  }
+}
+
+// Truncate text with ellipsis
+@mixin text-truncate($lines: 1) {
+  @if $lines == 1 {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  } @else {
+    display: -webkit-box;
+    -webkit-line-clamp: $lines;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    line-clamp: $lines; // Standard property for compatibility
+  }
+}
+
+// Gradient overlay
+@mixin gradient-overlay(
+  $direction: to bottom,
+  $opacity-start: 0.3,
+  $opacity-middle: 0.5,
+  $opacity-end: 0.9
+) {
+  background: linear-gradient(
+    $direction,
+    rgba(0, 0, 0, $opacity-start) 0%,
+    rgba(0, 0, 0, $opacity-middle) 50%,
+    rgba(0, 0, 0, $opacity-end) 100%
+  );
+}
+
+// Card shadow
+@mixin card-shadow($opacity: 0.5) {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, $opacity);
+}

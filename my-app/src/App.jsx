@@ -1,35 +1,32 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import "./index.scss";
+import Layout from "./components/Layout/Layout.jsx";
+import Homepage from "./pages/Homepage/Homepage.jsx";
+import MoviesPage from "./pages/MoviesPage/MoviesPage.jsx";
+import SeriesPage from "./pages/SeriesPage/SeriesPage.jsx";
+import TopRated from "./pages/TopRated/TopRated.jsx";
+import Upcoming from "./pages/Upcoming/Upcoming.jsx";
+import DetailsPage from "./pages/DetailsPage/DetailsPage.jsx";
+import { ApiProvider } from "./context/ApiContext.jsx";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <BrowserRouter>
+      <ApiProvider>
+        <Layout>
+          <Routes>
+            <Route path="/" element={<Homepage />} />
+            <Route path="/movies" element={<MoviesPage />} />
+            <Route path="/series" element={<SeriesPage />} />
+            <Route path="/categories" element={<div>Categories Page</div>} />
+            <Route path="/top-rated" element={<TopRated />} />
+            <Route path="/upcoming" element={<Upcoming />} />
+            <Route path="/:mediaType/:id" element={<DetailsPage />} />
+          </Routes>
+        </Layout>
+      </ApiProvider>
+    </BrowserRouter>
+  );
 }
 
-export default App
+export default App;
