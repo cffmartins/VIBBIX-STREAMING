@@ -1,0 +1,207 @@
+@use "../../styles/variables" as *;
+@use "../../styles/mixins" as *;
+@use "../Button/_Button" as *;
+@use "../../styles/_globals.scss" as *;
+.right-sidebar {
+  background-color: $gray-800;
+  padding: 0.5rem;
+  @include flex(flex-start, stretch, column);
+}
+
+.top-section {
+  @include flex(space-between, center, row);
+  margin-left: $spacing-sm;
+  margin-top: $spacing-lg;
+  padding-bottom: $spacing-lg;
+  position: relative;
+  overflow: visible;
+
+  .icon-bell {
+    color: $amber-300;
+    flex-shrink: 0;
+    position: relative;
+    cursor: pointer;
+
+    &:hover {
+      color: lighten($amber-300, 10%);
+    }
+  }
+
+  .user-profile {
+    @include flex(center, center, row);
+    gap: 0.7rem;
+    margin-top: 0;
+    margin-bottom: 0;
+    position: relative;
+
+    img {
+      width: 50px;
+      height: 50px;
+      border-radius: 30%;
+      object-fit: cover;
+    }
+
+    h5 {
+      color: $white;
+      font-weight: $font-regular;
+      margin: 0;
+    }
+
+    .dropdown-icon {
+      color: $gray-300;
+      margin-left: 0.4rem;
+      cursor: pointer;
+
+      &:hover {
+        color: $amber-300;
+      }
+    }
+  }
+}
+
+.notifications-dropdown {
+  position: absolute;
+  top: 100%;
+  left: -200px;
+  width: 300px;
+  background: $gray-800;
+  border: 1px solid $gray-600;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  z-index: 99999;
+  margin-top: 0.5rem;
+
+  .notifications-header {
+    padding: 1rem;
+    border-bottom: 1px solid $gray-600;
+    @include flex(space-between, center, row);
+
+    h4 {
+      color: $white;
+      margin: 0;
+      font-size: 1rem;
+      font-weight: $font-regular;
+    }
+
+    .clear-btn {
+      background: transparent;
+      border: none;
+      color: $amber-300;
+      font-size: $x-small;
+      cursor: pointer;
+
+      &:hover {
+        color: lighten($amber-300, 10%);
+      }
+    }
+  }
+
+  .notifications-list {
+    max-height: 300px;
+    overflow-y: auto;
+    @include custom-scrollbar(6px);
+  }
+
+  .notification-item {
+    padding: 1rem;
+    border-bottom: 1px solid $gray-700;
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    &:hover {
+      background: $gray-700;
+    }
+
+    .notification-message {
+      color: $white;
+      font-size: 0.9rem;
+      margin: 0 0 0.5rem 0;
+      line-height: 1.4;
+    }
+
+    .notification-time {
+      color: $gray-400;
+      font-size: 0.8rem;
+    }
+  }
+}
+
+.profile-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: 180px;
+  background: $gray-800;
+  border: 1px solid $gray-600;
+  border-radius: 8px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  z-index: 99999;
+  margin-top: 0.5rem;
+
+  .dropdown-item {
+    padding: 0.75rem 1rem;
+    color: $white;
+    cursor: pointer;
+    transition: background 0.2s ease;
+
+    &:hover {
+      background: $gray-700;
+      color: $amber-300;
+    }
+
+    &:first-child {
+      border-top-left-radius: 8px;
+      border-top-right-radius: 8px;
+    }
+
+    &:last-child {
+      border-bottom-left-radius: 8px;
+      border-bottom-right-radius: 8px;
+    }
+  }
+}
+
+.middle-section {
+  margin-left: $spacing-sm;
+  margin-top: 0;
+}
+
+.loading-message,
+.no-content {
+  color: $gray-300;
+  font-size: 0.9rem;
+  padding: 2rem 1rem;
+  text-align: center;
+  width: 100%;
+}
+
+.bottom-section {
+  @include flex(start, center, row);
+  gap: 1.2rem;
+  margin-top: 2rem;
+
+  .bottom-btn {
+    @include flex(start, center, row);
+    gap: 0.6rem;
+    padding: 0.5rem 1rem;
+    background: transparent;
+    border: none;
+    color: $white;
+    font-weight: 500;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: $amber-300;
+    }
+
+    &:active,
+    &.active {
+      color: $amber-300;
+      font-weight: 700;
+    }
+  }
+}
