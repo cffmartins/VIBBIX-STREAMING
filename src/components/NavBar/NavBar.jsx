@@ -3,7 +3,7 @@ import { NavLink, useNavigate } from "react-router-dom";
 import { ApiContext } from "../../context/ApiContext.jsx";
 import "./_NavBar.scss";
 import { Compass, Film, Search, Tv, Star } from "lucide-react";
-import Button from "../Button/Button";
+import Button from "../Button/Button.jsx";
 
 function NavBar() {
   const { searchMulti } = useContext(ApiContext);
