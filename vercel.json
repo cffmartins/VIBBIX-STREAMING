@@ -2,9 +2,9 @@
   "version": 2,
   "builds": [
     {
-      "src": "my-app/package.json",
+      "src": "VIBBIX-STREAMING/package.json",
       "use": "@vercel/node"
     }
   ],
-  "routes": [{ "src": "/(.*)", "dest": "my-app/$1" }]
+  "routes": [{ "src": "/(.*)", "dest": "VIBBIX-STREAMING/$1" }]
 }
