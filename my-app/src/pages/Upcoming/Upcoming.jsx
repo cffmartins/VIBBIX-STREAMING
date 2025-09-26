@@ -44,7 +44,6 @@ function Upcoming() {
   return (
     <div className="upcoming-page">
       <div className="upcoming-header"></div>
-      // upcoming movies section
       <div className="upcoming-section">
         <h2 className="section-title">Upcoming Movies</h2>
         <div className="upcoming-grid">
