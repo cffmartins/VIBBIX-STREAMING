@@ -1,16 +1,12 @@
-# React + Vite
+<strong> VIBBIX </strong> is my movie and TV series streaming website, developed as the final project of the React module. This project serves to enhance my skills in modern web development using React and external API integrations.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<strong> This project focuses on building proficiency in: </strong>
 
-Currently, two official plugins are available:
+- React (components, props, hooks, routing)
+- Modern JavaScript (ES6+ features)
+- HTML and CSS (layout, styling, and structure)
+- Consuming and integrating external APIs to deliver dynamic content
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## React Compiler
-
-The React Compiler is not enabled on this template. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+<strong> API Used </strong>
+<br> 
+This project uses the The Movie Database (TMDb) REST API to fetch detailed and up-to-date movie and TV show data.
