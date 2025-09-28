@@ -1,0 +1,76 @@
+// reset CSS
+
+// border-box model
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+// remove default margin
+* {
+  margin: 0;
+}
+
+body,
+html {
+  cursor: auto;
+  line-height: 1.5;
+}
+
+body {
+  // improve text rendering
+  -webkit-font-smoothing: antialiased;
+}
+
+// media defaults improvement
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+// inherit fonts providing consistency
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+// text overflow prevention
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+/* remove link decoration */
+a {
+  text-decoration: none;
+}
+
+/* fix Scrollbar */
+html {
+  scrollbar-gutter: stable;
+}

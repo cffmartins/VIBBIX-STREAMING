@@ -1,0 +1,34 @@
+@use "../../styles/variables" as *;
+@use "../../styles/mixins" as *;
+@use "../../styles/_globals.scss" as *;
+
+.watchlist-page {
+  padding: 0;
+  padding-bottom: 2rem;
+  background: $gray-900;
+  min-height: 100vh;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 100vw;
+  box-sizing: border-box;
+  padding-left: 12px;
+  padding-right: 12px;
+
+  .watchlist-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: $white;
+    text-align: center;
+    letter-spacing: 0.5px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .watchlist-page {
+    display: none;
+  }
+}

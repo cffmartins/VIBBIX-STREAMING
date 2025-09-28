@@ -1,0 +1,39 @@
+// importing variables and mixins
+@use "../../styles/variables" as *;
+@use "../../styles/mixins" as *;
+
+.app-layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+.left-sidebar,
+.right-sidebar {
+  background: $gray-800;
+  position: fixed;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+  z-index: 1000;
+}
+
+.left-sidebar {
+  width: 200px;
+  left: 0;
+}
+
+.right-sidebar {
+  width: 300px;
+  right: 0;
+  overflow: visible;
+}
+
+.main-content {
+  padding: $spacing-lg $spacing-md $spacing-xs;
+  flex: 1;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  margin-left: 200px;
+  margin-right: 300px;
+}

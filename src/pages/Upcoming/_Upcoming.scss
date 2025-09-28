@@ -1,0 +1,150 @@
+@use "../../styles/variables" as *;
+@use "../../styles/mixins" as *;
+
+.upcoming-page {
+  width: 100%;
+  padding: 2rem;
+  min-height: 100vh;
+
+  .upcoming-header {
+    margin-bottom: 3rem;
+    text-align: center;
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      text-align: center;
+      color: white;
+      background: linear-gradient(135deg, $amber-300 0%, $amber-300 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    p {
+      color: $gray-300;
+      font-size: 1.1rem;
+    }
+  }
+
+  .upcoming-section {
+    margin-bottom: 4rem;
+
+    .section-title {
+      font-size: 1.5rem;
+      color: $amber-300;
+      margin-bottom: 1.5rem;
+      text-align: left;
+    }
+
+    .upcoming-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      justify-items: stretch;
+      align-items: start;
+      margin-top: 1rem;
+      padding: 0 2rem;
+
+      @media (max-width: 1200px) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      @media (max-width: 768px) {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+      }
+
+      @media (max-width: 480px) {
+        grid-template-columns: 1fr;
+      }
+
+      .movie-card {
+        flex-shrink: 0;
+        width: 100%;
+        height: 400px;
+        background: $gray-800;
+        border-radius: 12px;
+        overflow: hidden;
+        transition: all 0.3s ease;
+        border: 1px solid transparent;
+        cursor: pointer;
+        position: relative;
+
+        &:hover {
+          border-color: $amber-300;
+          box-shadow: 0 10px 30px rgba(251, 191, 36, 0.2);
+        }
+
+        .movie-poster {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          display: block;
+        }
+
+        .card-overlay {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          background: linear-gradient(
+            to top,
+            rgba($gray-900, 0.95) 0%,
+            rgba($gray-900, 0.8) 50%,
+            transparent 100%
+          );
+          padding: $spacing-lg;
+          transform: translateY(100%);
+          transition: transform 0.3s ease;
+          color: $white;
+        }
+
+        &:hover .card-overlay {
+          transform: translateY(0);
+        }
+
+        .card-title {
+          color: $white;
+          font-size: 1.1rem;
+          font-weight: 700;
+          margin-bottom: $spacing-sm;
+          line-height: 1.3;
+          display: -webkit-box;
+          -webkit-line-clamp: 2;
+          line-clamp: 2;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+        }
+
+        .card-rating {
+          @include flex(start, center, row);
+          gap: 0.3rem;
+          color: $amber-300;
+          font-weight: 600;
+          margin-bottom: $spacing-sm;
+
+          svg {
+            color: $amber-300;
+          }
+        }
+
+        .card-info {
+          p {
+            color: rgba($white, 0.8);
+            font-size: 0.85rem;
+            margin-bottom: 0.2rem;
+            font-weight: 500;
+          }
+        }
+      }
+    }
+  }
+
+  .loading {
+    @include flex(row, center, center);
+    height: 60vh;
+    color: $white;
+    font-size: 1.5rem;
+  }
+}
