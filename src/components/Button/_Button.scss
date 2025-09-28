@@ -16,12 +16,11 @@
     display: flex;
     align-items: center;
     gap: 0.5em;
-
+    position: relative;
     &:hover,
     &.active {
       color: $amber-300;
       font-weight: $font-bold;
-
       &::after {
         content: "";
         position: absolute;
@@ -31,6 +30,7 @@
         height: 3px;
         background: $amber-300;
         border-radius: inherit;
+        display: block;
       }
     }
   }

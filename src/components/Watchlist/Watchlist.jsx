@@ -1,7 +1,7 @@
 import React, { useContext, useRef } from "react";
 import { ChevronLeft, ChevronRight, X, Play } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-import { ApiContext } from "../../context/ApiContext";
+import { ApiContext } from "../../context/ApiContext.jsx";
 import "./_Watchlist.scss";
 
 // reusable Watchlist component
