@@ -1,5 +1,4 @@
-import React, { useContext } from "react";
-import { ApiContext } from "../../context/ApiContext";
+import { ApiContext } from "../../context/ApiContext.jsx";
 import Watchlist from "../../components/Watchlist/Watchlist";
 import "./_WatchlistPage.scss";
 

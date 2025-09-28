@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { ChevronLeft, Play, Plus, Star, X } from "lucide-react";
 import Button from "../../components/Button/Button";
 import { Link } from "react-router-dom";
-import { ApiContext } from "../../context/ApiContext";
+import { ApiContext } from "../../context/ApiContext.jsx";
 import "./_DetailsPage.scss";
 
 // api configuration
